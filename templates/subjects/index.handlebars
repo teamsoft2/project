@@ -1,0 +1,28 @@
+<h1>
+    subjects
+</h1>
+
+<div class="my-4">
+  <a href="/subjects/create">add new subject</a>
+</div>
+
+{{#each subjects}}
+    <div class="d-flex justify-content-between">
+         <a href="/subjects/{{_id}}">
+
+          {{name}}
+
+         </a>
+    <div>
+        <a href="/subjects/{{_id}}/edit">
+          Edit
+        </a>
+         | <form action="/subjects/{{_id}}?_method=DELETE" method="post">
+          <button type="submit">Delete</button>
+
+         </form>
+    </div>
+
+    </div>
+
+{{/each}}

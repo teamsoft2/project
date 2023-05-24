@@ -1,0 +1,28 @@
+<h1>
+    departments
+</h1>
+
+<div class="my-4">
+  <a href="/departments/create">add new department</a>
+</div>
+
+{{#each departments}}
+    <div class="d-flex justify-content-between">
+         <a href="/departments/{{_id}}">
+
+          {{name}}
+
+         </a>
+    <div>
+        <a href="/departments/{{_id}}/edit">
+          Edit
+        </a>
+         | <form action="/departments/{{_id}}?_method=DELETE" method="post">
+          <button type="submit">Delete</button>
+
+         </form>
+    </div>
+
+    </div>
+
+{{/each}}
